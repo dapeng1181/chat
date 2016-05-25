@@ -1,0 +1,67 @@
+
+<div id="chat-main-panel" class="row">
+</div>
+<script>
+    var $b = $("body");
+    $(function(){
+        //访客信息完善 表单样式修改
+        $b.on("mouseenter",".data-panel-input",function(){
+            $(this).removeClass("input-b-hide");
+        });
+        $b.on("mouseleave",".data-panel-input",function(){
+            $(this).addClass("input-b-hide");
+        });
+        //访客信息完善 ajax提交 失去焦点提交
+        $b.on("blur",".data-panel-input",function(){
+            var $item = $(this);
+            var $itemParent = $item.parent();
+            if(!visitid || !$item.attr("name"))
+                return false;
+            var formdata = {
+                "visitid":visitid,
+                "name":$item.attr("name"),
+                "value":$item.val()
+            };
+            $.ajax({
+                type:"post",
+                url:"{:U('Chat/Index/setdata')}",
+                data:formdata,
+            beforeSend:function(){
+                $item.addClass("disabled");
+            },
+            success:function(data){
+                if(data.status==1){
+                    $itemParent.addClass("has-success");
+                    setTimeout(function(){
+                        $itemParent.removeClass("has-success");
+                    },1000);
+                }else if(data.status==0){
+                    $itemParent.addClass("has-error");
+                    setTimeout(function(){
+                        $itemParent.removeClass("has-error");
+                    },1000);
+                }
+            },
+            error:function(){
+                $itemParent.addClass("has-error");
+                setTimeout(function(){
+                    $itemParent.removeClass("has-error");
+                },1000);
+            },
+            complete:function(){
+                $item.addClass("disabled");
+            }
+            });
+        });
+    });
+</script>
+<script>
+//客服信息变量
+var msg = {},
+    ws = {},
+    uid = {$uid},  //身份uid
+    role = "worker",  //客服人员
+    relation = "{$companyid}", //所属系统标识
+    visitid = "";  //当前聊天的访客标识
+</script>
+<script src="/Public/dist/js/im.js"></script>

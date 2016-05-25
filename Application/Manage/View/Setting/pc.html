@@ -1,0 +1,127 @@
+<div class="navdiv">
+    <ul class="nav nav-secondary nav-justified">
+        <li class="">
+            <a href="{:U('Manage/Setting/index')}">基础设置 </a>
+        </li>
+        <li class="active">
+            <a href="{:U('Manage/Setting/pc')}">网站接入 </a>
+        </li>
+        <li class="">
+            <a href="javascript:alert('该功能正在开发完善中...')">会话设置 </a>
+        </li>
+    </ul>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        接入代码
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-5">
+        <p><strong>1.在网站中嵌入代码</strong></p>
+        <p style="color:#808080">请将以下代码添加到你网站的 HTML 源代码中，放在&lt;/body>标签之前</p>
+        <p><textarea class="script-textarea form-control" rows="3" readonly="readonly" style="resize:none;cursor:text;background-color: #fff;"><script src="{$js_url}" defer async></script>
+        </textarea></p>
+        <p><button  class="btn-clip btn btn-primary input-lg" data-clip="script-textarea"  data-loading-text="<i class='icon-check'></i>已成功复制到剪切板" type="button"> 复制到剪切板 </button></p>
+        <p style="color:#808080">或 直接使用以下链接</p>
+        <p><textarea class="url-textarea form-control" rows="3" readonly="readonly" style="resize:none;cursor:text;background-color: #fff;">{$http_url}
+</textarea></p>
+        <p><button  class="btn-clip btn btn-primary input-lg" data-clip="url-textarea"  data-loading-text="<i class='icon-check'></i>已成功复制到剪切板" type="button"> 复制到剪切板 </button></p>
+         <br/>
+
+        </div>
+            <div class="col-xs-7"></div>
+        </div>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        访客端设置
+    </div>
+    <div class="panel-body">
+        <form class="terminalform form-horizontal">
+            <input type="hidden" name="attr" value="company">
+            <div class="row">
+                <div class="col-xs-5">
+                    <p><strong>1.  选择访客端颜色</strong></p>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <span class="terminal-theme theme-black" data-style="black"><eq name="company['style']" value="black"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-bluegrey" data-style="bluegrey"><eq name="company['style']" value="bluegrey"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-indigo" data-style="indigo"><eq name="company['style']" value="indigo"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-yellow" data-style="yellow"><eq name="company['style']" value="yellow"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-brown" data-style="brown"><eq name="company['style']" value="brown"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-purple" data-style="purple"><eq name="company['style']" value="purple"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-green" data-style="green"><eq name="company['style']" value="green"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-red" data-style="red"><eq name="company['style']" value="red"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-blue" data-style="blue"><eq name="company['style']" value="blue"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                            <span class="terminal-theme theme-default" data-style="default"><eq name="company['style']" value="default"><i class="icon-check"></i><else/>&nbsp;</eq></span>
+                        </div>
+                        <input type="hidden" name="style" value="{$company.style}"/>
+                    </div>
+                    <p><strong>2.  访客端入口文案</strong></p>
+                    <p><input class="form-control input-lg" type="text" name="title" value="{$company.title}"></p>
+                    <p><strong>3.  客服欢迎语</strong></p>
+                    <p><textarea class="form-control" name="welcome" rows="2">{$company.welcome}</textarea></p>
+                    <p><strong>2.客服系统开关</strong></p>
+                    <p>
+                    <div class="btn-group">
+                        <label class="btn input-lg btn-switch <eq name="company['status']" value="3">btn-primary</eq>" data-status="1">
+                            启用
+                        </label>
+                        <label class="btn input-lg btn-default btn-switch <neq name="company['status']" value="3">active</neq>" data-status="0">
+                           停用
+                        </label>
+                    </div>
+                    <input type="hidden" name="status" value="<eq name="company['status']" value="3">1<else/>0</eq>">
+                    </p>
+                    <p style="color:#808080">开启后,客服系统才能正常使用</p>
+                    <p><button class="btn btn-lg btn-primary submitBtn disabled" data-loading-text="正在提交中..."> 保存 </button></p>
+                </div>
+                <div class="col-xs-7"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+$(function(){
+    //点击复制
+    var client = new ZeroClipboard($(".btn-clip"));
+    client.on( 'ready', function(event) {
+        client.on( 'copy', function(event) {
+            if(!$(event.target).is(".disabled")){
+                event.clipboardData.setData('text/plain', $.trim($("."+$(event.target).data("clip")).text()));
+                $(event.target).button('loading');
+                setTimeout(function() {
+                    $(event.target).button('reset');
+                }, 1000);
+            }
+        });
+    } );
+    // 访客端颜色选择
+    $(".terminal-theme").click(function(){
+        $ter_item = $(this);
+        $ter_item.siblings().html("&nbsp;").end().html("<i class=\"icon-check\"></i>");
+        $("input[name='style']").val($ter_item.data("style"));
+        $(".terminalform").formIsComplete();
+    });
+    //客服系统开关
+    $(".btn-switch").click(function(){
+        $switch_item = $(this);
+        if($switch_item.data("status")==1){
+            $switch_item.siblings().removeClass("active").end().addClass("btn-primary");
+        }else{
+            $switch_item.siblings().removeClass("btn-primary").end().addClass("active");
+        }
+        $("input[name='status']").val($switch_item.data("status"));
+        $(".terminalform").formIsComplete();
+    });
+
+    //表单提交
+    $(".terminalform").propChange({
+        btnSubmit:".submitBtn",
+        actionUrl:"{:U('Manage/Setting/save')}"
+    });
+});
+</script>

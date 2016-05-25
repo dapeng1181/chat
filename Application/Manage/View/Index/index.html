@@ -1,0 +1,112 @@
+<div class="infoline">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="pull-left bg-primary infotip">
+                        <i class="icon icon-chat-dot icon-2x"></i>
+                    </div>
+                    <div class="pull-right infotxt text-right">
+                        <h1><span id="client_chat_online_s">0</span> <br/><small>正在咨询人数</small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="pull-left bg-success infotip">
+                        <i class="icon icon-headphones icon-2x"></i>
+                    </div>
+                    <div class="pull-right infotxt text-right">
+                        <h1><span id="kf_online_s">0</span> <br/><small>在线客服人数</small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="pull-left bg-special infotip">
+                        <i class="icon icon-user icon-2x"></i>
+                    </div>
+                    <div class="pull-right infotxt text-right">
+                        <h1><span id="client_wait_online_s">0</span> <br/><small>当前等待人数</small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="panel">
+    <div class="panel-body infochart">
+        <p>接待会话数 <i class="icon icon-exclamation-sign huitip"  data-toggle="tooltip" title="以昨天为截止日期，前30天接待会话数"></i></p>
+        <canvas id="myLineChart" ></canvas>
+    </div>
+</div>
+
+<p class="lead">今日客服活动</p>
+<div class="panel">
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>客服</th>
+                <th>在线状态</th>
+                <th>当前接待量</th>
+                <th>累计会话数</th>
+                <th>累计消息数</th>
+                <th>首次上线时间</th>
+                <th>累计登录时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+-->
+<script>
+    //客服信息变量
+    var msg = {},
+            ws = {},
+            uid = {$uid},  //身份uid
+            role = "admin",  //客服人员
+            relation = "{$companyid}"; //所属系统标识
+</script>
+<script>
+    $(function(){
+        $b = $("body");
+        sk_init();
+        function sk_init() {
+            ws = new WebSocket("ws://localhost:8585");
+            ws.onopen = function () {
+                msg = {};
+                msg.type = "login"; //消息类型
+                msg.uid = uid; //访客标识id
+                msg.role = role; //访客身份
+                msg.relation = relation; //所属客服系统
+                ws.send(JSON.stringify(msg));
+            };
+            ws.onmessage = function (e) {
+                msg = JSON.parse(e.data);
+                if(msg.type == 'onlineNum'){
+                    //在线访客和客服情况
+                    $b.find("#kf_online_s").text(msg.list.kf_online_s);
+                    $b.find("#client_wait_online_s").text(msg.list.client_wait_online_s);
+                    $b.find("#client_chat_online_s").text(msg.list.client_chat_online_s);
+                }
+            }
+        }
+    });
+</script>

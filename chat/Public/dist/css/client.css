@@ -1,0 +1,216 @@
+body{
+        border: 0;
+        overflow: hidden;
+        background: #fff;
+        font-size: 14px;
+    }
+a{
+    cursor:pointer;
+}
+    .ms_header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        width: 100%;
+        height: 60px;
+        padding: 7px 10px;
+        zoom: 1;
+    }
+    .ms_header .control_title{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .ms_header .control_win{
+        margin-top: 10px;
+    }
+    .ms_header .control_win a{
+        float: right;
+        display: block;
+        margin-left: 15px;
+        cursor: pointer;
+        color: #E5E5E5;
+    }
+    .ms_header .control_win a, .ms_header .control_win a.ele_btn:hover, .ms_header .control_win a.ele_btn:focus{
+        text-decoration: none;
+    }
+    .ms_header .control_win a i{
+        font-size:20px;
+    }
+    .ms_header .control_win a.ele_btn:hover, .ms_header .control_win a.ele_btn:focus{
+        color:#ffffff;
+    }
+    .ms_body{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 60px;
+        bottom: 100px;
+        width: 100%;
+    }
+    .ms_footer{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 100px;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #E5E5E5;
+    }
+    .ms_footer .control_text{
+        height: 60px;
+
+    }
+    .ms_footer .control_text #textarea{
+        display: block;
+        width: 100%;
+        height: 60px;
+        padding: 8px 10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        resize: none;
+        outline: 0;
+        background-color: #fff;
+        border: 0;
+        word-break: break-all;
+        font-size: 13px;
+        line-height: 17px;
+        -webkit-appearance: none;
+    }
+    .ms_footer .control_element{
+        height: 40px;
+    }
+    .ms_footer .control_element .control_ele_left{
+        padding-top: 10px;
+    }
+    .ms_footer .control_element .control_ele_left a.ele_btn{
+        float: left;
+        display: block;
+        margin-left: 10px;
+        cursor: pointer;
+        color: #94a4b3;
+    }
+    .ms_footer .control_element .control_ele_left a.ele_btn .icon-cloud-upload{
+        display:none;
+    }
+    .control_ele_left a, .control_ele_left a.ele_btn:hover, .control_ele_left a.ele_btn:focus{
+        text-decoration: none;
+    }
+    .ms_footer .control_ele_left a.ele_btn:hover, .ms_footer .control_ele_left a.ele_btn:focus{
+        color:#808080;
+    }
+    .ms_footer .control_ele_left a.ele_txt{
+        padding-top: 6px;
+    }
+    .ms_footer .control_ele_right #btn_send{
+        margin-top: 8px;
+        margin-right: 10px;
+        padding:3px 15px;
+        border: none;
+    }
+    .ms_footer .control_face{
+        position: absolute;
+        display: none;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 1px solid #E5E5E5;
+        padding-bottom:10px;
+    }
+    .ms_footer .control_face .img_face{
+        width:32px;
+        height:32px;
+        margin-left:20px;
+        margin-top:10px;
+        cursor: pointer;
+    }
+    .ele_btn .icon-volume-off{
+        padding-right:10px;
+    }
+.ms_body{
+    overflow-y: auto;
+}
+    /*对话框*/
+.msg_tip{
+    font-size: 12px;
+    text-align:center;
+    color:#a3afb7;
+}
+.msg_list .text{
+    font-size: 14px;
+    border-radius:6px;
+    position: relative;
+    padding: 10px;
+    margin:10px;
+}
+.msg_list .text .face{
+    width: 32px;
+    height: 32px;
+}
+.msg_list.msg_right .text{
+    float: right;
+    color: #fff;
+}
+.msg_list.msg_left .text{
+    background-color: #F1F1F1;
+    float: left;
+    color: #333333;
+}
+.msg_list .time{
+    font-size:12px;
+}
+.msg_list.msg_left .time{
+    color:#a3afb7;
+}
+.msg_list.msg_right .time{
+    color:#E5E5E5;
+}
+
+#error_main_panel{
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:0;
+}
+
+
+#message_main_panel .ms_body{
+    bottom: 30px;
+}
+#message_main_panel .ms_body .message{
+    padding: 30px;
+}
+#message_main_panel .ms_body .message .form-group{
+    padding: 5px 0;
+}
+.ms_footer.ms_min_footer{
+    height: 30px;
+    text-align:center;
+}
+.ms_footer.ms_min_footer a.ele_txt{
+    text-decoration:none;
+    color: #94a4b3;
+    line-height:30px;
+    cursor:pointer;
+}
+#loading{
+    width:24px;
+    height:24px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-12px;
+    margin-top:-12px;
+    z-index:-1;
+    background: url("../../img/load.gif") no-repeat;
+}
+#chat_qrcode{
+  padding-left:60px;
+}

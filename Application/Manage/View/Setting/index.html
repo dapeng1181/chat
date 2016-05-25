@@ -1,0 +1,163 @@
+<div class="navdiv">
+    <ul class="nav nav-secondary nav-justified">
+        <li class="active">
+            <a href="{:U('Manage/Setting/index')}">基础设置 </a>
+        </li>
+        <li class="">
+            <a href="{:U('Manage/Setting/pc')}">网站接入 </a>
+        </li>
+        <li class="">
+            <a href="javascript:alert('该功能正在开发完善中...')">会话设置 </a>
+        </li>
+    </ul>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        个人信息
+    </div>
+    <div class="panel-body">
+        <form class="accountform form-horizontal">
+            <input type="hidden" name="attr" value="account">
+            <div class="form-group">
+                <label class="col-xs-1 control-label">账户</label>
+
+                <div class="col-xs-4" style="padding-top: 6px;">
+                    {$user.account}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">姓名</label>
+
+                <div class="col-xs-4">
+                    <input type="text" name="truename" id="truename" value="{$user.truename}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">昵称</label>
+
+                <div class="col-xs-4">
+                    <input type="text" name="nickname" id="nickname" value="{$user.nickname}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">手机</label>
+
+                <div class="col-xs-4">
+                    <input type="text" name="mobile" id="mobile" value="{$user.mobile}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">邮箱</label>
+
+                <div class="col-xs-4">
+                    <input type="text" name="email" id="email" value="{$user.email}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label"></label>
+
+                <div class="col-xs-4">
+                    <button class="btn btn-primary submitBtn input-lg disabled" data-loading-text="正在提交中..."> 保存</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        公司信息
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-warning with-icon">
+            <div class="content">请如实填写以下信息，它将作为我们向您提供服务的重要依据，我们会对您的资料严格保密。</div>
+        </div>
+        <form class="accountform form-horizontal">
+            <input type="hidden" name="attr" value="company">
+            <div class="form-group">
+                <label class="col-xs-1 control-label">公司名称</label>
+                <div class="col-xs-4">
+                    <input type="text" name="company" id="company" value="{$company.company}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">公司官网</label>
+                <div class="col-xs-4">
+                    <input type="text" name="website" id="website" value="{$company.website}" placeholder="不必填写 “http://” 开头" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">联系人姓名</label>
+                <div class="col-xs-4">
+                    <input type="text" name="linkman" id="linkman" value="{$company.linkman}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">联系人电话</label>
+                <div class="col-xs-4">
+                    <input type="text" name="telephone" id="telephone" value="{$company.telephone}" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">详细地址</label>
+                <div class="col-xs-4">
+                    <textarea class="form-control" rows="2" name="address" placeholder="请填写详细街道地址，方便邮寄发票及礼品">{$company.address}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label"></label>
+                <div class="col-xs-4">
+                    <button class="btn btn-primary submitBtn input-lg disabled" data-loading-text="正在提交中..."> 保存 </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        密码设置
+    </div>
+    <div class="panel-body">
+        <form class="accountform form-horizontal">
+            <input type="hidden" name="attr" value="pass">
+            <div class="form-group">
+                <label class="col-xs-1 control-label">原密码</label>
+
+                <div class="col-xs-4">
+                    <input type="password" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{6,16}$/" data-null="密码不能为空" data-error="密码格式错误" name="password" id="password" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">新密码</label>
+
+                <div class="col-xs-4">
+                    <input type="password" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{6,16}$/" data-null="新密码不能为空" data-error="密码格式错误" name="newpassword" id="newpassword" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label">确认新密码</label>
+
+                <div class="col-xs-4">
+                    <input type="password" data-fic="fic" data-error="两次输入的密码不一致" data-recheck="newpassword" name="repassword" id="repassword" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-1 control-label"></label>
+
+                <div class="col-xs-4">
+                    <button class="btn btn-primary submitBtn input-lg disabled" data-loading-text="正在提交中..."> 保存</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        //密码修改
+        $(".accountform").propChange({
+            btnSubmit:".submitBtn",
+            actionUrl:"{:U('Manage/Setting/save')}",
+            fromRefresh:true
+        });
+    });
+</script>

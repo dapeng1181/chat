@@ -1,0 +1,154 @@
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-8" style="border-right: 1px solid #dddddd;">
+                <p class="lead">历史会话</p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>最近会话时间</th>
+                        <th>接待客服</th>
+                        <th>访客用户名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="list" id="vo">
+                        <tr class="visitid" data-visitid="{$vo.visitid}">
+                            <td>{$vo.neartime}</td>
+                            <td>{$vo.cusername}</td>
+                            <td id="{$vo.visitid}">{$vo.username}</td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+                <div>
+                    <ul class="pager pager-justify">
+                        {$page}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div id="visitid_chat_info">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    var $b = $("body");
+    $(function(){
+        //访客信息完善 表单样式修改
+        $b.on("mouseenter",".data-panel-input",function(){
+            $(this).removeClass("input-b-hide");
+        });
+        $b.on("mouseleave",".data-panel-input",function(){
+            $(this).addClass("input-b-hide");
+        });
+        //访客信息完善 ajax提交 失去焦点提交
+        $b.on("blur",".data-panel-input",function(){
+            var $item = $(this);
+            var $itemParent = $item.parent();
+            if(!visitid || !$item.attr("name"))
+                return false;
+            var formdata = {
+                "visitid":visitid,
+                "name":$item.attr("name"),
+                "value":$item.val()
+            };
+            $.ajax({
+                type:"post",
+                url:"{:U('Chat/Index/setdata')}",
+                data:formdata,
+                beforeSend:function(){
+                    $item.addClass("disabled");
+                },
+                success:function(data){
+                    if(data.status==1){
+                        $itemParent.addClass("has-success");
+                        $b.find("#"+visitid).text($b.find("#username").val());
+                        setTimeout(function(){
+                            $itemParent.removeClass("has-success");
+                        },1000);
+                    }else if(data.status==0){
+                        $itemParent.addClass("has-error");
+                        setTimeout(function(){
+                            $itemParent.removeClass("has-error");
+                        },1000);
+                    }
+                },
+                error:function(){
+                    $itemParent.addClass("has-error");
+                    setTimeout(function(){
+                        $itemParent.removeClass("has-error");
+                    },1000);
+                },
+                complete:function(){
+                    $item.addClass("disabled");
+                }
+            });
+        });
+        //分页样式
+        $b.find(".prev").addClass("btn pull-left");
+        $b.find(".next").addClass("btn pull-right");
+        //
+        $b.on("click",".visitid",function(){
+            var $item = $(this);
+            visitid = $item.data("visitid");
+            //点击样式修改
+            $item.siblings().css("background-color","none").end().css("background-color","#ebf2f9");
+            chatPanelinfo();
+            //获取用户的相关信息
+            $.get("/index.php?s=Manage/Index/getdata",{"visitid":visitid},function(data){
+                if(data.status==1){
+                    $("#username").val(data.info.username);
+                    $("#email").val(data.info.email);
+                    $("#address").val(data.info.address);
+                    $("#mobile").val(data.info.mobile);
+                }
+            });
+            //拉取聊天记录
+            $.get("/index.php?s=Client/Index/pulllist",{"visitid":visitid,"relation":relation,"cuid":uid},function(data){
+                if(data.status==1){
+                    var $chatActive = $b.find("#chat-active");
+                    var append_html = "";
+                    $.each(data.info,function(index,item){
+                        if(item.type!='chat'){
+                            pullT = "right",
+                                    pullB = "bg-primary";
+                            if(uid==item.from){
+                                pullT = "left";
+                                pullB = "";
+                            }
+                            item.content = item.content.replace(/\[em_([0-9]*)\]/g,'<img class="face" src="/Public/img/face/$1.png" border="0" />');
+                            if(item.type === 'text'){ //文本消息
+                                $chatActive.append("<div class=\"msg_list msg_"+pullT+" clearfix\"><div class=\"text "+pullB+"\"><p>"+item.content+"</p><span class=\"time\">"+item.time+"</span></div></div>");
+                            }else if(item.type === 'img'){
+                                //图片消息
+                            }else if(item.type === 'attach'){
+                                //附件消息
+                            }
+                        }
+                    });
+                    $chatActive.append(append_html);
+                    $chatActive.scrollTop( $chatActive.get(0).scrollHeight);
+                }
+            });
+        });
+        //相关会话信息面板
+        function chatPanelinfo(){
+            var chatPanelinfo_html = '<ul class="nav nav-secondary nav-justified"><li class="active"><a href="#chat-active" data-toggle="tab">会话详情</a></li><li class=""><a href="#tab2" data-toggle="tab">用户资料</a></li></ul><div class="tab-content"><div class="tab-pane in active" id="chat-active"></div><div class="tab-pane" id="tab2"><form class="form-horizontal data-panel"><div class="form-group"><label class="col-xs-1 control-label pd-top10">姓名</label><div class="col-xs-7"><input type="text" name="username" id="username" value="" placeholder="访客真实姓名" class="data-panel-input form-control input-lg input-b-hide"></div></div><div class="form-group"><label class="col-xs-1 control-label pd-top10">手机</label><div class="col-xs-7"><input type="text" name="mobile" id="mobile" value="" placeholder="访客联系方式" class="data-panel-input form-control input-lg input-b-hide"></div></div><div class="form-group"><label class="col-xs-1 control-label pd-top10">邮箱</label><div class="col-xs-7"><input type="text" name="email" id="email" value=""placeholder="访客邮箱" class="data-panel-input form-control input-lg input-b-hide"></div></div><div class="form-group"><label class="col-xs-1 control-label pd-top10">地址</label><div class="col-xs-7"><input type="text" name="address" id="address" value="" placeholder="访客详细地址" class="data-panel-input form-control input-lg input-b-hide"></div></div></form></div></div>';
+            $b.find("#visitid_chat_info").html(chatPanelinfo_html);
+        }
+    });
+</script>
+<script>
+    //客服信息变量
+    var msg = {},
+            ws = {},
+            uid = {$uid},  //身份uid
+            role = "admin",  //客服人员
+            relation = "{$companyid}"; //所属系统标识
+</script>

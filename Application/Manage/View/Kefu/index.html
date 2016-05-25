@@ -1,0 +1,71 @@
+<p class="lead">
+    <a class="btn btn-primary input-lg edit_kefu" data-title="新增客服" data-href="{:U('Manage/Kefu/edit')}"> + 新增客服</a>
+</p>
+<div class="panel">
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>昵称</th>
+                <th>姓名</th>
+                <th>帐号</th>
+                <th>手机号</th>
+                <th>权限</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <volist name="list" id="vo">
+                <tr>
+                    <td>{$vo.nickname}</td>
+                    <td>{$vo.truename}</td>
+                    <td>{$vo.account}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>
+                        <if condition="$vo['auth'] eq 1">超级管理员<else/>客服</if>
+                    </td>
+                    <td><a class="edit_kefu" href="javascript:;" data-title="编辑客服" data-href="{:U('Manage/Kefu/edit', array('uid'=>$vo['uid']))}"><i class="icon icon-edit"></i></a>
+                    </td>
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+
+        <div>
+             <ul class="pager pager-justify">
+                 {$page}
+              </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+      //面板样式js动态调整
+      $(function(){
+          panelHeight();
+          function panelHeight(){
+              var rightpanel = parseInt($(window).height())-150;
+              var panel = parseInt($(".panel-body>table").height())+80;
+              newpanel = rightpanel>=panel?rightpanel:panel;
+              $(".panel").height(newpanel);
+          };
+          $(window).resize(function(){
+              panelHeight();
+          });
+          //编辑客服
+          var addKefuTrigger = {};
+          $(".edit_kefu").click(function(){
+              var $item = $(this);
+              addKefuTrigger = new $.zui.ModalTrigger({title:$item.data("title") ,backdrop:'static',keyboard:'false',remote: $item.data("href")});
+              addKefuTrigger.show();
+              $item.blur();
+          });
+          $("body").on('hidden.zui.modal',"#triggerModal", function() {
+              $(this).remove();
+          });
+
+          //分页样式
+          $("body .prev").addClass("btn pull-left");
+          $("body .next").addClass("btn pull-right");
+      });
+</script>

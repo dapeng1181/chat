@@ -1,0 +1,86 @@
+[ 2016-05-25T16:45:46+08:00 ] 127.0.0.1 /index.php/Chat/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-25T16:45:48+08:00 ] 127.0.0.1 /index.php/Chat/Setting/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `we_user` [ RunTime:0.0530s ]
+SQL: SELECT * FROM `we_user` WHERE `uid` = 14 LIMIT 1   [ RunTime:0.0490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-25T16:45:49+08:00 ] 127.0.0.1 /index.php/Chat/History/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `we_dialog_relation` [ RunTime:0.0560s ]
+SQL: SHOW COLUMNS FROM `we_visitor` [ RunTime:0.0620s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `we_dialog_relation` WHERE `cuid` = 14 LIMIT 1   [ RunTime:0.0600s ]
+SQL: SELECT * FROM `we_dialog_relation` WHERE `cuid` = 14 ORDER BY neartime desc LIMIT 0,20   [ RunTime:0.0610s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '7f0000010b560000023b' LIMIT 1   [ RunTime:0.0610s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '7f0000010b54000001c2' LIMIT 1   [ RunTime:0.0510s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '7f0000010b54000001f3' LIMIT 1   [ RunTime:0.0520s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '7f0000010b54000001e4' LIMIT 1   [ RunTime:0.0530s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '8487dd032e7098bca129af2e769fed9c' LIMIT 1   [ RunTime:0.0500s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'be155b877f816c96ab30651a80912ffd' LIMIT 1   [ RunTime:0.0510s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '16285d72dd9c032082d0e1a9d49fefd9' LIMIT 1   [ RunTime:0.0520s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '30cd40be002f228b5f67018819dae40e' LIMIT 1   [ RunTime:0.0540s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'e3a5c4134e44ffd0016697148f07e717' LIMIT 1   [ RunTime:0.0520s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'e1ad3f99ef8dc382c6d811b448d277ec' LIMIT 1   [ RunTime:0.0580s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'fa75e8b54bb679eb3fe5c487800c3d64' LIMIT 1   [ RunTime:0.0580s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '21a2aea235c67dbef2c6127d7a15e5a1' LIMIT 1   [ RunTime:0.0570s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '57796e983b8186095fc7d15af51d886d' LIMIT 1   [ RunTime:0.0540s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'c873c73da2035c55f141df9e4761d38a' LIMIT 1   [ RunTime:0.0530s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'ed8843505d8b6787e450aefb55bc1d38' LIMIT 1   [ RunTime:0.0510s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'dc6e7119d8cbc6dc8e661c25e843a1fe' LIMIT 1   [ RunTime:0.0550s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'a76b933b3b8ac58eae818235ae1a3cea' LIMIT 1   [ RunTime:0.0530s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = 'fc585f7356aeb3eeb7d513e0c18138a8' LIMIT 1   [ RunTime:0.0600s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '6040bef8834e198baefeb063675d3e64' LIMIT 1   [ RunTime:0.0580s ]
+SQL: SELECT `username` FROM `we_visitor` WHERE `visitid` = '0cbc243fa868054c18ce86b4bcc02e22' LIMIT 1   [ RunTime:0.0600s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

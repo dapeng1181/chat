@@ -1,0 +1,80 @@
+/*!
+ * dapeng
+ */
+html,body{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+body{
+    background-color:#ffffff;
+}
+.w1000 {
+    margin: 0 auto;
+    width: 1000px;
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    color: #666666;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+a:hover,
+a:focus {
+    color: #666666;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.header{
+    border-bottom: 1px solid #f2f2f2;
+}
+.header .top{
+    background: #f7f7f7;
+    color: #9d9d9d;
+    padding: 10px 0px;
+}
+.subtop {
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.subtop .bignav {
+    margin-top: 15px;
+}
+.subtop .bignav ul li {
+    float: left;
+    margin-left: 30px;
+    padding: 0 5px 5px 5px;
+    border-bottom: 2px solid #fff;
+}
+.subtop .bignav ul li a{
+    font-size: 18px;
+}
+.subtop .bignav ul li a:hover,.subtop .bignav ul li a:focus {
+    color:#4caf50;
+}
+.footer {
+    background: #333;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color:#fff;
+}
+.footer .copyright{
+    text-align:center;
+}
+.banner{
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    background-color:#38B03F;
+}
