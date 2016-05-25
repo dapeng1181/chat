@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <title>堆客开源客服系统</title>
     <link id="zuithumb" href="/Public/dist/css/zui.css" rel="stylesheet">
     <link href="/Public/dist/css/home.css" rel="stylesheet">
@@ -17,20 +18,18 @@
 <div class="header">
     <div class="top">
         <div class="w1000 clearfix">
-            <span class="pull-left"><i class="icon-volume-up"></i> 小贴士 ：本站可以免费发布广告</span>
-            <span class="pull-right">快速搭建自己的WEB客服系统平台 | 拿走直接用 <i class="icon-hand-left"></i></span>
+            <span class="pull-left"><i class="icon-volume-up" style="color:#145CCD"></i> 小贴士 ：本站可以免费发布广告</span>
+            <span class="pull-right">快速搭建自己的WEB客服系统平台 | 拿走直接用 <i class="icon-hand-left" style="color:#EA644A"></i></span>
         </div>
     </div>
     <div class="subtop">
         <div class="w1000 clearfix">
-            <div class="logo pull-left"><a href="/"><img src="/Public/img/logo.png" alt="logo"></a></div>
-            <div class="bignav pull-right"><ul><li><a href="">首页</a></li><li><a href="">产品介绍</a></li><li><a href="">开源博客</a></li><li><a href="">问题与需求</a></li><li><a href="/index.php?s=Manage/Login/index.html" target="_blank">Alpha体验中心</a></li></ul></div>
+            <div class="logo pull-left"><a href="/">Dchat <em>Beta</em></a></div>
+            <div class="bignav pull-right"><ul><li><a href="">产品介绍</a></li><li><a href="">开源博客</a></li><li><a href="">问题与需求</a></li><li><a href="/index.php?s=Manage/Login/index.html" target="_blank">Alpha体验中心</a></li></ul></div>
         </div>
     </div>
 </div>
-<div class="banner">
 
-</div>
 <div class="footer">
     <div class="w1000">
         <p></p>
@@ -42,5 +41,6 @@
         $("<link>").attr({ rel: "stylesheet",type: "text/css",href: "/Public/dist/css/zui-green-theme.css"}).insertAfter("#zuithumb");
     });
 </script>
+<script src="http://www.duiler.com/Client/Index/kefujs/sysid/97b6e749ee9553c1b93cb8fdfdf47485.html" defer async></script>
 </body>
 </html>

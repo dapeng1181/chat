@@ -8,6 +8,9 @@ html,body{
 }
 body{
     background-color:#ffffff;
+    overflow-y: auto;
+    font: normal 14px/1.6 "Helvetica neue", "Segoe UI", Arial, "Microsoft Jhenghei", "Microsoft Yahei", Sans-serif;
+
 }
 .w1000 {
     margin: 0 auto;
@@ -17,7 +20,7 @@ ul, ol, li {
     list-style: none;
 }
 a {
-    color: #666666;
+    color: #758392;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -25,7 +28,7 @@ a {
 }
 a:hover,
 a:focus {
-    color: #666666;
+    color: #758392;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -39,6 +42,12 @@ a:focus {
     color: #9d9d9d;
     padding: 10px 0px;
 }
+.logo a{
+    font-size:50px;
+}
+.logo a em{
+    font-size:18px;
+}
 .subtop {
     height: 60px;
     margin-top: 20px;
@@ -50,6 +59,7 @@ a:focus {
 .subtop .bignav ul li {
     float: left;
     margin-left: 30px;
+    margin-top: 20px;
     padding: 0 5px 5px 5px;
     border-bottom: 2px solid #fff;
 }
@@ -57,15 +67,15 @@ a:focus {
     font-size: 18px;
 }
 .subtop .bignav ul li a:hover,.subtop .bignav ul li a:focus {
-    color:#4caf50;
+    color:#3280FC;
 }
 .footer {
-    background: #333;
+    background: #f7f7f7;
     padding: 20px 0;
     left: 0;
     bottom: 0;
     width: 100%;
-    color:#fff;
+    color:#9d9d9d;
 }
 .footer .copyright{
     text-align:center;
@@ -76,5 +86,4 @@ a:focus {
     overflow: hidden;
     width: 100%;
     height: 500px;
-    background-color:#38B03F;
 }

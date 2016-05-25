@@ -12,15 +12,12 @@
     <script src="/Public/dist/js/zui.min.js"></script>
     <script src="/Public/dist/lib/cookie/jquery.cookie.js"></script>
     <script src="/Public/dist/js/formvalid.js"></script>
-    <script src="/Public/dist/js/formPlaceholder.js"></script>
-    <!--[if lt IE 9]>
-    <script src="/Public/dist/lib/ieonly/html5shiv.js"></script>
-    <script src="/Public/dist/lib/ieonly/respond.js"></script>
-    <script src="/Public/dist/lib/ieonly/excanvas.js"></script>
-    <![endif]-->
+    <script src="/Public/dist/js/particles.min.js"></script>
+    <script src="/Public/dist/js/particles.min.js"></script>
     <style>
         body {
-            background-color: #ffffff;
+            background: #60d4d4;
+            font: normal 14px/1.6 "Helvetica neue", "Segoe UI", Arial, "Microsoft Jhenghei", "Microsoft Yahei", Sans-serif;
         }
         .formpanel{
             width: 420px;
@@ -37,13 +34,32 @@
             padding:0;
             cursor: pointer;
         }
+        #particles-js{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .panel{
+            background: none;
+        }
+        .text-t, label, label a, p, p a{
+            color:#fff;
+        }
+        .text-t{
+           font-size: 54px;
+        }
+        label a:hover, p a:hover{
+            color:#fff;
+        }
     </style>
 </head>
 <body>
 <!--[if lt IE 8]>
 <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
 <![endif]-->
-
+<div id="particles-js"></div>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -51,9 +67,9 @@
                 <div class="panel">
                     <div class="panel-body">
                         <form id="regform" class="form-horizontal">
-                            <div class="form-group">
+                            <div class="form-group" style="padding-bottom: 80px;text-align: center;">
                                 <div class="col-xs-12">
-                                    <h1 class="text-center text-primary">免费注册</h1>
+                                    <span class="text-center text-t"> 免费注册 </span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -108,6 +124,9 @@ $(function(){
         actionUrl:"<?php echo U('Manage/Login/reg');?>"
     });
 });
+particlesJS.load('particles-js', '/Public/dist/js/particles.json', function() {
+      console.log('callback - particles.js config loaded');
+    });
 </script>
 </body>
 </html>
