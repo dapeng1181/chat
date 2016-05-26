@@ -32,40 +32,50 @@
         </div>
     </div>
 </div>
-<script src="/Public/dist/js/particles.min.js"></script>
+<script src="/Public/dist/js/formvalid.js"></script>
+<div id="contentBody" style="padding:50px;">
+	<div class="alert alert-warning">
+	  <div class="content">产品处于开发测试阶段，您的反馈对我们来说很重要^.^</div>
+	</div>
+	<form id="feedback" class="form-horizontal" role="form" method="post">
+		
+		<div class="form-group">
+          <div class="col-xs-12">
+            <label class="radio-inline input-lg"> <input type="radio" name="optionsRadios" value="1" checked> 问题反馈 </label>
+            <label class="radio-inline input-lg"> <input type="radio" name="optionsRadios" value="2"> 需求反馈 </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <textarea name="content" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{20,500}$/" data-null="反馈内容不能为空" data-error="反馈内容长度20~500个字符"  id="content" rows="5" class="form-control input-lg" placeholder="您的反馈对我们来说很重要^.^"></textarea>
+          </div>
+        </div>
+		<div class="form-group">
+          <div class="col-xs-2">
+            <input type="text" value="" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{4}$/" data-null="验证码不能为空" data-error="验证码格式错误" name="code" id="code" class="form-control input-lg" placeholder="验证码">
+          </div>
+		  <div class="col-xs-2">
+            <img src="<?php echo U('Manage/Login/code');?>" id="imgcode" title="点击更换验证码" class="form-control input-lg"  style="padding:0;">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+             <button class="btn btn-primary btn-lg disabled" data-loading-text="正在提交中..." id="btn-submit" type="button">提交</button>
+          </div>
+        </div>
+    </form>
+</div>
 <style>
-#particles-js{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
+.col, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+	padding:0;
+}
 </style>
-<div id="exper">
-<div id="particles-js"></div>
-<div class="tititle">输入你的网址，点击立即体验</div>
-<div class="input-group">
-    <span class="input-group-addon btn-lg">http://</span>
-  <input type="text" class="form-control input-lg tiyan-url" placeholder="请输入你的网址">
-  <span class="input-group-btn">
-    <button class="btn btn-primary btn-lg tiyan" type="button">立即体验</button>
-  </span>
-</div>
-</div>
 <script>
-	
-    particlesJS.load('particles-js', '/Public/dist/js/particlesindex.json', function() {
-      console.log('callback - particles.js config loaded');
-    });
-	
-	var preview_url = '/index.php?s=Home/Index/preview/url/';
-	$(".tiyan").on("click",function(){
-	     var tiyan_url = $(".tiyan-url").val();
-		if(!!$(".tiyan-url").val()){
-			window.open(preview_url+tiyan_url);
-		}
-	});
+$("#feedback").propChange({
+        imgCode:"#imgcode",
+        btnSubmit:"#btn-submit",
+        actionUrl:"<?php echo U('Manage/Login/reg');?>"
+});
 </script>
 <div class="footer">
     <div class="w1000">

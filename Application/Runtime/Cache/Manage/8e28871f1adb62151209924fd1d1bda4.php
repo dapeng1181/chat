@@ -49,6 +49,9 @@
         label a:hover, p a:hover{
             color:#fff;
         }
+		.popover-content{
+			color:#758392;
+		}
     </style>
 </head>
 <body>
@@ -89,7 +92,7 @@
                                 <div class="col-xs-6">
                                     <div class="checkbox pull-right">
                                         <label>
-                                           <a href="javascript:;">忘记密码？</a>
+                                           <a href="javascript:;" id="logpass" data-toggle="popover" data-placement="right" data-content="忘记密码请联系企业超级管理员重置密码；超级管理员忘记密码请联系1528065095@qq.com">忘记密码？</a>
                                         </label>
                                     </div>
                                 </div>
@@ -113,6 +116,11 @@
             btnSubmit:"#btn-submit",
             actionUrl:"<?php echo U('Manage/Login/index');?>"
         });
+		$('#logpass').hover(function(){
+			$(this).popover('show');
+		},function(){
+			$(this).popover('hide');
+		});
     });
     particlesJS.load('particles-js', '/Public/dist/js/particles.json', function() {
       console.log('callback - particles.js config loaded');

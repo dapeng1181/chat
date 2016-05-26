@@ -1,0 +1,45 @@
+<script src="/Public/dist/js/formvalid.js"></script>
+<div id="contentBody" style="padding:50px;">
+	<div class="alert alert-warning">
+	  <div class="content">产品处于开发测试阶段，您的反馈对我们来说很重要^.^</div>
+	</div>
+	<form id="feedback" class="form-horizontal" role="form" method="post">
+		
+		<div class="form-group">
+          <div class="col-xs-12">
+            <label class="radio-inline input-lg"> <input type="radio" name="optionsRadios" value="1" checked> 问题反馈 </label>
+            <label class="radio-inline input-lg"> <input type="radio" name="optionsRadios" value="2"> 需求反馈 </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <textarea name="content" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{20,500}$/" data-null="反馈内容不能为空" data-error="反馈内容长度20~500个字符"  id="content" rows="5" class="form-control input-lg" placeholder="您的反馈对我们来说很重要^.^"></textarea>
+          </div>
+        </div>
+		<div class="form-group">
+          <div class="col-xs-2">
+            <input type="text" value="" data-fic="fic" data-type="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{4}$/" data-null="验证码不能为空" data-error="验证码格式错误" name="code" id="code" class="form-control input-lg" placeholder="验证码">
+          </div>
+		  <div class="col-xs-2">
+            <img src="{:U('Manage/Login/code')}" id="imgcode" title="点击更换验证码" class="form-control input-lg"  style="padding:0;">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+             <button class="btn btn-primary btn-lg disabled" data-loading-text="正在提交中..." id="btn-submit" type="button">提交</button>
+          </div>
+        </div>
+    </form>
+</div>
+<style>
+.col, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+	padding:0;
+}
+</style>
+<script>
+$("#feedback").propChange({
+        imgCode:"#imgcode",
+        btnSubmit:"#btn-submit",
+        actionUrl:"{:U('Manage/Login/reg')}"
+});
+</script>

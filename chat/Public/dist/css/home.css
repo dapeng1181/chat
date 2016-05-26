@@ -47,6 +47,7 @@ a:focus {
 }
 .logo a em{
     font-size:18px;
+	color: #2d7dfc;
 }
 .subtop {
     height: 60px;
@@ -104,4 +105,12 @@ a:focus {
 	width:100%;
 	min-width: 1000px;
 	top:200px;
+}
+#contentBody{
+	width:1000px;
+	margin:0 auto;
+}
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
 }

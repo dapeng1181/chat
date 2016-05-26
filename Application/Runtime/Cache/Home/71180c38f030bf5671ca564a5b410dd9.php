@@ -32,41 +32,62 @@
         </div>
     </div>
 </div>
-<script src="/Public/dist/js/particles.min.js"></script>
-<style>
-#particles-js{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-</style>
-<div id="exper">
-<div id="particles-js"></div>
-<div class="tititle">输入你的网址，点击立即体验</div>
-<div class="input-group">
-    <span class="input-group-addon btn-lg">http://</span>
-  <input type="text" class="form-control input-lg tiyan-url" placeholder="请输入你的网址">
-  <span class="input-group-btn">
-    <button class="btn btn-primary btn-lg tiyan" type="button">立即体验</button>
-  </span>
-</div>
-</div>
-<script>
+<div id="contentBody" style="padding: 50px 0;font-size: 16px;">
 	
-    particlesJS.load('particles-js', '/Public/dist/js/particlesindex.json', function() {
-      console.log('callback - particles.js config loaded');
-    });
-	
-	var preview_url = '/index.php?s=Home/Index/preview/url/';
-	$(".tiyan").on("click",function(){
-	     var tiyan_url = $(".tiyan-url").val();
-		if(!!$(".tiyan-url").val()){
-			window.open(preview_url+tiyan_url);
-		}
-	});
-</script>
+	<p>
+		本着物尽所用，人尽其能，完全开源开放共享的原则
+	</p>
+	<p>
+		页面UI框架：ZUI&nbsp;<a target="_blank" href="http://zui.sexy/">http://zui.sexy/</a>
+	</p>
+	<p>
+		程序开发：ThinkPHP框架&nbsp;<a href="http://www.thinkphp.cn/" target="_blank">http://www.thinkphp.cn/</a>
+	</p>
+	<p>
+		服务端socket开发：GatewayWorker框架&nbsp;<a target="_blank" href="http://www.workerman.net/">http://www.workerman.net/</a>
+	</p>
+	<p>
+		浏览器端采用websocket协议
+	</p>
+	<p>
+		服务器：阿里云ECS &nbsp;<a href="https://www.aliyun.com" target="_blank">https://www.aliyun.com</a>
+	</p>
+	<p>
+		数据库：mysql
+	</p>
+	<p>
+		实例代码：
+	</p>
+	<div style="color:#38b03f;font-size:18px;font-style: italic;">
+		<p>
+			Client:
+		</p>
+		<p>
+			&lt;script&gt;<br/>
+		</p>
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ws.send(JSON.stringify({&quot;type&quot;:&quot;text&quot;,&quot;msg&quot;:&quot;你好&quot;}));&nbsp;&nbsp;<br/>
+		</p>
+		<p>
+			&lt;/script&gt;
+		</p>
+		<p>
+			Server:
+		</p>
+		<p>
+			&lt;?php
+		</p>
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gateway::sendToUid($client_id, json_encode(array(&quot;type&quot;=&gt;&quot;text&quot;,&quot;msg&quot;=&gt;&quot;你好&quot;)));
+		</p>
+		<p>
+			?&gt;<br/>
+		</p>
+	</div>
+	<p>
+		开发人员：dapeng，冰冻的狐狸
+	</p>
+</div>
 <div class="footer">
     <div class="w1000">
         <p></p>

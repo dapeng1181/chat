@@ -18,8 +18,8 @@
 <div class="header">
     <div class="subtop">
         <div class="w1000 clearfix">
-            <div class="logo pull-left"><a href="/">Dchat <em>Beta</em></a></div>
-            <div class="bignav pull-right"><ul><li><a href="">产品介绍</a></li><li><a href="">开源博客</a></li><li><a href="">问题与需求</a></li><li><a href="/index.php?s=Manage/Login/index.html" target="_blank">Alpha体验中心</a></li></ul></div>
+            <div class="logo pull-left"><a href="/">Dchat <em>Alpha</em></a></div>
+            <div class="bignav pull-right"><ul><li><a href="<?php echo U('Index/product');?>">产品介绍</a></li><li><a href="<?php echo U('Index/feedback');?>">问题与需求</a></li><li><a href="/index.php?s=Manage/Login/index.html" target="_blank">Alpha体验中心</a></li></ul></div>
         </div>
     </div>
 </div>

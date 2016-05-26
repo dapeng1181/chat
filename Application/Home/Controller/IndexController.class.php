@@ -14,4 +14,12 @@ class IndexController extends CommonController {
 		layout(false);
 		$this->display();
 	}
+	//产品介绍
+	public function product(){
+		$this->display();
+	}
+	//问题与需求
+	public function feedback(){
+		$this->display();
+	}
 }
