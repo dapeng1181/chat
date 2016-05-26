@@ -87,6 +87,9 @@
 	<p>
 		开发人员：dapeng，冰冻的狐狸
 	</p>
+	<p>
+		github地址：<a href="https://github.com/dapeng1181/chat" target="_blank">https://github.com/dapeng1181/chat</a>
+	</p>
 </div>
 <div class="footer">
     <div class="w1000">
