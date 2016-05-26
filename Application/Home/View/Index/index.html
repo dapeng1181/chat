@@ -1,0 +1,35 @@
+<script src="/Public/dist/js/particles.min.js"></script>
+<style>
+#particles-js{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+</style>
+<div id="exper">
+<div id="particles-js"></div>
+<div class="tititle">输入你的网址，点击立即体验</div>
+<div class="input-group">
+    <span class="input-group-addon btn-lg">http://</span>
+  <input type="text" class="form-control input-lg tiyan-url" placeholder="请输入你的网址">
+  <span class="input-group-btn">
+    <button class="btn btn-primary btn-lg tiyan" type="button">立即体验</button>
+  </span>
+</div>
+</div>
+<script>
+	
+    particlesJS.load('particles-js', '/Public/dist/js/particlesindex.json', function() {
+      console.log('callback - particles.js config loaded');
+    });
+	
+	var preview_url = '/index.php?s=Home/Index/preview/url/';
+	$(".tiyan").on("click",function(){
+	     var tiyan_url = $(".tiyan-url").val();
+		if(!!$(".tiyan-url").val()){
+			window.open(preview_url+tiyan_url);
+		}
+	});
+</script>

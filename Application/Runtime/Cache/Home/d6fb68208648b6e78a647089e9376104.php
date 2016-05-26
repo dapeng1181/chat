@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
@@ -16,26 +16,28 @@
 <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
 <![endif]-->
 <div class="header">
-    <div class="top">
-        <div class="w1000 clearfix">
-            <span class="pull-left"><i class="icon-volume-up" style="color:#38B03F"></i> 小贴士 ：本站可以免费发布广告</span>
-            <span class="pull-right">快速搭建自己的WEB客服系统平台 | 拿走直接用 <i class="icon-hand-left" style="color:#EA644A"></i></span>
-        </div>
-    </div>
     <div class="subtop">
         <div class="w1000 clearfix">
-            <div class="logo pull-left"><a href="/">Dchat <em>Alpha</em></a></div>
+            <div class="logo pull-left"><a href="/">Dchat <em>Beta</em></a></div>
             <div class="bignav pull-right"><ul><li><a href="">产品介绍</a></li><li><a href="">开源博客</a></li><li><a href="">问题与需求</a></li><li><a href="/index.php?s=Manage/Login/index.html" target="_blank">Alpha体验中心</a></li></ul></div>
         </div>
     </div>
 </div>
-{__CONTENT__}
-<div class="footer">
-    <div class="w1000">
-        <p></p>
-        <p class="copyright">&copy;2016&nbsp;堆客免费开源在线客服系统 版权所有 豫ICP备15007166号-1</p>
-    </div>
-</div>
+<iframe id="previewBox" frameborder="0" src="//<?php echo ($url); ?>"></iframe>
+<style>
+body{
+   overflow-y: hidden;
+}
+#previewBox{
+	position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.subtop {
+    margin-top: -10px;
+}
+</style>
 <script>
     $(function(){
         $("<link>").attr({ rel: "stylesheet",type: "text/css",href: "/Public/dist/css/zui-default-theme.css"}).insertAfter("#zuithumb");

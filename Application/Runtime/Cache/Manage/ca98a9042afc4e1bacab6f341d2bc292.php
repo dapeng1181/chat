@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <title>在线客服注册</title>
     <link href="/Public/dist/css/zui.css" rel="stylesheet">
     <link href="/Public/dist/css/zui-default-theme.css" rel="stylesheet">
