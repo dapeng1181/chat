@@ -1,0 +1,16 @@
+发布弹幕
+弹幕文字必选,图片,链接为空则不显示,其他的可选项有默认值,弹幕具体配置如下代码:
+var item={
+   img:'static/heisenberg.png', //图片 
+   info:'弹幕文字信息', //文字 
+   href:'http://www.yaseng.org', //链接 
+   close:true, //显示关闭按钮 
+   speed:6, //延迟,单位秒,默认6 
+   bottom:70, //距离底部高度,单位px,默认随机 
+   color:'#fff', //颜色,默认白色 
+   old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+ }
+$('body').barrager(item);
+
+清除所有弹幕
+$.fn.barrager.removeAll();

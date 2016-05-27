@@ -5,7 +5,7 @@ $(function(){
     sk_init();
     function sk_init() {
         isChat();
-        ws = new WebSocket("ws://localhost:8585");
+        ws = new WebSocket("ws://www.duiler.com:8585");
         /**
          * 连接建立时触发
          * {"type":"login", "uid":"访客标识", "role":"角色", "relation":"所属系统"}

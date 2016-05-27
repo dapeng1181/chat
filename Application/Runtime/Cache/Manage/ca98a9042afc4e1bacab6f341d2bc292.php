@@ -14,7 +14,6 @@
     <script src="/Public/dist/lib/cookie/jquery.cookie.js"></script>
     <script src="/Public/dist/js/formvalid.js"></script>
     <script src="/Public/dist/js/particles.min.js"></script>
-    <script src="/Public/dist/js/particles.min.js"></script>
     <style>
         body {
             background: #60d4d4;

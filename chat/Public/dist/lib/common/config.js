@@ -3,7 +3,7 @@
  */
 var sysid = window.location.href.split("/").pop().split(".").shift();
 var webim = {
-    "server" : "ws://localhost:8585",
+    "server" : "ws://www.duiler.com:8585",
     "offical": "http://www.duiler.com"
 };
 var logger;

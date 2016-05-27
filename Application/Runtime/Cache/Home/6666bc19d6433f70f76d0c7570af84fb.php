@@ -74,7 +74,7 @@
 $("#feedback").propChange({
         imgCode:"#imgcode",
         btnSubmit:"#btn-submit",
-        actionUrl:"<?php echo U('Manage/Login/reg');?>"
+        actionUrl:"<?php echo U('Home/Index/feedback');?>"
 });
 </script>
 <div class="footer">

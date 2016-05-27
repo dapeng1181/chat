@@ -1,10 +1,4 @@
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:16 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:21 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
-2016-05-20 17:12:21 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready
+2016-05-27 17:07:20 Workerman[start.php] start in DAEMON mode
+2016-05-27 17:07:31 Workerman[start.php] stop 
+2016-05-27 17:07:31 Workerman[start.php] not run
+2016-05-27 17:07:37 Workerman[start.php] start in DAEMON mode
