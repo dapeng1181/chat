@@ -132,7 +132,7 @@ window.Messenger = (function(){
 
 //js初始化加载
 (function(){
-    var host_url = "http://localhost";
+    var host_url = "http://www.duiler.com";
     //加载初始化div
     var d_main_btn = document.createElement("div");
     d_main_btn.setAttribute("id", "kefu_main_btn");
