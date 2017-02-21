@@ -1,6 +1,6 @@
 #wechat
 APPlication
---Chat 客服端
+·--Chat 客服端
     --Controller 控制器
         --HistoryController.class.php 历史会话
         --IndexController.class.php 当前会话
@@ -16,4 +16,4 @@ APPlication
         --KefuController.class.php 客服管理
         --LoginController.class.php 登录
         --RegisterController.class.php 注册
-        --SettingController.class.php 设置
+        --SettingController.class.php 设置·
