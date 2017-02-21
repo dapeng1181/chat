@@ -1,6 +1,6 @@
 #wechat
 APPlication
-···php
+```php
 --Chat 客服端
     --Controller 控制器
         --HistoryController.class.php 历史会话
@@ -18,4 +18,4 @@ APPlication
         --LoginController.class.php 登录
         --RegisterController.class.php 注册
         --SettingController.class.php 设置
-        ···
+        ```
