@@ -1,6 +1,6 @@
 #wechat
-APPlication
 ```php
+APPlication
 --Chat 客服端
     --Controller 控制器
         --HistoryController.class.php 历史会话
