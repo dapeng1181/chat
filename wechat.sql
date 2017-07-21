@@ -98,7 +98,7 @@ CREATE TABLE `we_visitor` (
 -- ----------------------------
 -- Records 
 -- ----------------------------
-INSERT INTO `we_company` VALUES ('3', '97b6e749ee9553c1b93cb8fdfdf47485', '上海有色网', 'www.baidu.com', '上海市浦东新区路陆家嘴软件园9号楼7楼', '张彦坡', '18321251979', '2', '10', '0', 'default', '咨询在线客服', '您好，很高兴为您服务，请问有什么可以帮您的？', '3');
+
 INSERT INTO `we_company` VALUES ('4', '22ff8396577d3fab74042bb33a50d907', null, null, null, null, null, '2', '10', '0', 'default', null, null, '3');
 INSERT INTO `we_company` VALUES ('5', 'a97d64b7eec04170c15083eb5553be65', null, null, null, null, null, '2', '10', '0', 'default', null, null, '3');
 INSERT INTO `we_company` VALUES ('6', '32da85b536538c50d952f6491a36e0f1', null, null, null, null, null, '2', '10', '0', 'default', null, null, '3');
@@ -449,16 +449,9 @@ INSERT INTO `we_dialog_relation` VALUES ('82', '3', '14', '7f0000010b54000001c2'
 INSERT INTO `we_dialog_relation` VALUES ('83', '3', '14', '7f0000010b54000001e4', '1463736242', '1463736242');
 INSERT INTO `we_dialog_relation` VALUES ('84', '3', '14', '7f0000010b54000001f3', '1463736700', '1463736700');
 INSERT INTO `we_dialog_relation` VALUES ('85', '3', '14', '7f0000010b560000023b', '1464157236', '1464157248');
-INSERT INTO `we_user` VALUES ('14', 'admin@admin.com', '张彦坡', '大鹏123', '96e79218965eb72c92a549dd5a330112', '18321251979', '1528065095@qq.com', '1', '3', '0', null, '1464165940', '127.0.0.1', '3');
-INSERT INTO `we_user` VALUES ('15', 'zhangyanpo@qq.com', null, null, '96e79218965eb72c92a549dd5a330112', null, 'zhangyanpo@qq.com', '1', '4', '0', null, '0', null, '3');
-INSERT INTO `we_user` VALUES ('16', 'admin@qq.com', '校长', '学生', '96e79218965eb72c92a549dd5a330112', '18321251979', 'admin@qq.com', '2', '3', '1459907850', '127.0.0.1', '0', null, '3');
-INSERT INTO `we_user` VALUES ('17', 'admin@163.com', '成龙', 'mr long', '96e79218965eb72c92a549dd5a330112', '120', 'admin@163.com', '2', '3', '1459991128', '127.0.0.1', '0', null, '3');
-INSERT INTO `we_user` VALUES ('18', 'admin@123.com', '张彦坡', '大鹏', '96e79218965eb72c92a549dd5a330112', '110', 'admin@123.com', '2', '3', '1459992140', '127.0.0.1', '1460690917', '127.0.0.1', '3');
-INSERT INTO `we_user` VALUES ('19', '79148389@qq.com', 'fox', '冰冻的狐狸', 'bdf7f1d88363824b7dd44c32ec279db8', '', '79148389@qq.com', '1', '5', '1460940610', '180.168.160.38', '1463712032', '180.168.160.38', '3');
-INSERT INTO `we_user` VALUES ('20', 'wutengfei555@163.com', null, null, '805c9b4057c34201140b779706a0a3ce', null, 'wutengfei555@163.com', '1', '6', '1461307749', '171.15.198.138', '1461307767', '171.15.198.138', '3');
-INSERT INTO `we_user` VALUES ('21', '595996990@qq.com', null, null, '2c6510ed3fad1bf9611c5c60b650768b', null, '595996990@qq.com', '1', '7', '1461313634', '218.82.189.132', '1461313687', '218.82.189.132', '3');
+
 INSERT INTO `we_visitor` VALUES ('1', '7f0000010b5400000001', null, null, null, null, null, '127.0.0.1', null);
-INSERT INTO `we_visitor` VALUES ('2', '7f0000010b5400000003', '张先生', '18321251979', '79148389@qq.com', null, '上海市浦东新区', '127.0.0.1', null);
+
 INSERT INTO `we_visitor` VALUES ('3', '7f0000010b540000021e', null, null, null, null, null, '127.0.0.1', null);
 INSERT INTO `we_visitor` VALUES ('4', '7f0000010b5400000224', null, null, null, null, '', '127.0.0.1', null);
 INSERT INTO `we_visitor` VALUES ('5', '7f0000010b540000000d', '', '', '', null, null, '183.192.31.1', null);
